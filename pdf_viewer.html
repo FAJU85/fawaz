@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>السيرة الذاتية | فواز الجبيلي</title>
+  
+  <!-- 🔤 خطوط عربية -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --muted: #64748b;
+      --primary: #1e40af; --primary-hover: #1d3a9a; --border: #e2e8f0;
+      --shadow: 0 4px 20px rgba(0,0,0,0.06); --radius: 16px;
+      --font: 'Tajawal', 'Almarai', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    [data-theme="dark"] {
+      --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8;
+      --border: #334155; --shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font); background: var(--bg); color: var(--text);
+      line-height: 1.6; padding: 16px; min-height: 100vh;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    
+    /* Header */
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; background: var(--card); border-radius: var(--radius);
+      box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border);
+      flex-wrap: wrap; gap: 12px;
+    }
+    .header h1 { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .header-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn {
+      padding: 8px 14px; background: var(--primary); color: #fff; border: none;
+      border-radius: 8px; font-weight: 500; font-size: 14px; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font); transition: background 0.2s;
+    }
+    .btn:hover { background: var(--primary-hover); }
+    .btn-secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--border); }
+    
+    /* PDF Viewer */
+    .viewer-card {
+      background: var(--card); border-radius: var(--radius);
+      box-shadow: var(--shadow); border: 1px solid var(--border);
+      overflow: hidden; margin-bottom: 16px;
+    }
+    .viewer-frame {
+      width: 100%; height: 75vh; border: none; display: block;
+      background: var(--bg);
+    }
+    
+    /* Fallback Panel */
+    .fallback {
+      padding: 24px; text-align: center; display: none;
+    }
+    .fallback.show { display: block; }
+    .fallback h3 { margin: 0 0 12px; font-size: 17px; }
+    .fallback p { color: var(--muted); margin-bottom: 20px; font-size: 14px; }
+    .fallback-links {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    }
+    .fallback-links a {
+      flex: 1; min-width: 180px; max-width: 220px;
+      padding: 14px; border: 2px solid var(--border);
+      border-radius: 12px; text-decoration: none; color: var(--text);
+      text-align: center; transition: border-color 0.2s, transform 0.2s;
+      display: block;
+    }
+    .fallback-links a:hover {
+      border-color: var(--primary); transform: translateY(-2px);
+      background: rgba(30,64,175,0.03);
+    }
+    .fallback-links .icon { font-size: 22px; display: block; margin-bottom: 6px; }
+    .fallback-links .label { font-weight: 600; font-size: 14px; }
+    
+
+    
+   
+    /* Info Box */
+    /*
+    .info-box {
+      background: #fffbeb; border: 1px solid #fcd34d;
+      border-radius: 10px; padding: 14px 18px; margin: 16px 0;
+      font-size: 14px; color: #92400e; display: flex; gap: 10px; align-items: flex-start;
+    }
+*/
+    /*
+    .info-box code {
+      background: #fef3c7; padding: 2px 6px; border-radius: 4px;
+      font-family: monospace; font-size: 13px; direction: ltr; display: inline-block;
+    }
+   
+    
+    */
+
+
+    /* Footer */
+    .footer {
+      text-align: center; padding: 20px; color: var(--muted);
+      font-size: 13px; margin-top: 16px;
+    }
+    .footer a { color: var(--primary); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header { flex-direction: column; align-items: flex-start; }
+      .viewer-frame { height: 60vh; }
+      .fallback-links { flex-direction: column; }
+      .fallback-links a { min-width: 100%; }
+    }
+    
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header class="header">
+      <h1>📄 السيرة الذاتية</h1>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn btn-secondary">🌙 وضع ليلي</button>
+        <a href="/" class="btn btn-secondary">🏠 الرئيسية</a>
+      </div>
+    </header>
+    
+    <!-- ⚠️ Important: Sharing Settings Check -->
+    <!-- 
+    <div class="info-box">
+      <span>💡</span>
+      <div>
+        <strong>تأكد من إعدادات المشاركة في جوجل درايف:</strong><br>
+        يجب أن يكون الملف مضبوطاً على: <code>أي شخص لديه الرابط ▸ مشاهد</code><br>
+        <small>إذا ظهرت رسالة "طلب إذن"، راجع إعدادات المشاركة في جوجل درايف.</small>
+      </div>
+    </div>
+    -->
+    
+    <!-- PDF Viewer Card -->
+    <div class="viewer-card">
+      
+      <!-- ✅ Google Drive Preview Embed (Most Reliable) -->
+      <iframe 
+        class="viewer-frame"
+        src="https://drive.google.com/file/d/1LMiP8zhfpxuVsdENy-sA7Sx3DPALx4WW/preview"
+        title="السيرة الذاتية - فواز الجبيلي"
+        loading="lazy"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      
+      
+      <!-- ❌ Fallback Options (shown if iframe fails) -->
+       <!--
+      <div id="fallback" class="fallback">
+        <h3>⚠️ لم يُعرض الملف</h3>
+        <p>جرب أحد الخيارات التالية:</p>
+        <div class="fallback-links">
+          <a href="https://drive.google.com/file/d/1LMiP8zhfpxuVsdENy-sA7Sx3DPALx4WW/view?usp=sharing" target="_blank">
+            <span class="icon">🔗</span>
+            <span class="label">فتح في جوجل درايف</span>
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1LMiP8zhfpxuVsdENy-sA7Sx3DPALx4WW" target="_blank">
+            <span class="icon">⬇️</span>
+            <span class="label">تنزيل الملف</span>
+          </a>
+          <a href="https://docs.google.com/viewer?url=https://drive.google.com/uc?export=download&id=1LMiP8zhfpxuVsdENy-sA7Sx3DPALx4WW" target="_blank">
+            <span class="icon">🔎</span>
+            <span class="label">عارض جوجل السريع</span>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+   -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        © <span id="year"></span> فواز عبد الكريم الجبيلي
+        <br><small>مخلص جمركي معتمد | إداري محترف</small>
+      </p>
+    </footer>
+    
+  </div>
+
+  <!-- 🚀 Simple JS -->
+  <script>
+    // ===== 🌙 Dark Mode =====
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark.matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = '☀️ وضع نهاري';
+    }
+    
+    themeToggle.onclick = () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      themeToggle.textContent = isDark ? '🌙 وضع ليلي' : '☀️ وضع نهاري';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    };
+    
+    // ===== 📅 Set Year =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // ===== 🔍 Detect Load Failure (Optional Fallback Trigger) =====
+    // Note: iframe load errors are hard to detect cross-origin,
+    // so we provide a manual "Show Options" button if needed.
+    setTimeout(() => {
+      const iframe = document.querySelector('.viewer-frame');
+      // Add a subtle hint after 5 seconds if user seems stuck
+      if (iframe) {
+        const hint = document.createElement('p');
+        hint.style.cssText = 'text-align:center; padding:12px; color:var(--muted); font-size:13px; cursor:pointer; border-top:1px solid var(--border);';
+        hint.textContent = '⚠️ لا يظهر الملف؟ اضغط هنا لعرض خيارات بديلة';
+        hint.onclick = () => {
+          document.querySelector('.viewer-frame').style.display = 'none';
+          document.getElementById('fallback').classList.add('show');
+        };
+        document.querySelector('.viewer-card').appendChild(hint);
+      }
+    }, 5000);
+  </script>
+  
+</body>
+</html>

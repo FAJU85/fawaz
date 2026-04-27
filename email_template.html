@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>طلب توظيف</title>
+  
+  <!-- Google Fonts: Arabic-optimized -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Almarai:wght@300;400;700&display=swap');
+  </style>
+  
+  <style>
+    /* ===== EMAIL-SAFE RESET ===== */
+    body, table, td, p, a, li, blockquote { 
+      -webkit-text-size-adjust: 100%; 
+      -ms-text-size-adjust: 100%; 
+      margin: 0; padding: 0; 
+    }
+    img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+    
+    /* ===== FONT STACKS ===== */
+    .arabic { font-family: 'Tajawal', 'Almarai', 'Segoe UI', Tahoma, Arial, sans-serif !important; }
+    .english { font-family: 'Segoe UI', Tahoma, Arial, 'Tajawal', sans-serif !important; }
+    
+    /* ===== BUTTON HOVER (Webmail only) ===== */
+    .cta-btn:hover { opacity: 0.92 !important; }
+    
+    /* ===== RESPONSIVE ===== */
+    @media only screen and (max-width: 620px) {
+      .wrapper { width: 100% !important; border-radius: 0 !important; }
+      .content, .profile-section { padding-left: 24px !important; padding-right: 24px !important; }
+      .cta-btn { width: 100% !important; max-width: 280px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f7fa; font-family:'Tajawal', 'Almarai', 'Segoe UI', Tahoma, Arial, sans-serif;">
+
+<!-- Outer wrapper -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f7fa; padding:24px 0;">
+  <tr>
+    <td align="center" style="padding:0;">
+      
+      <!-- ✅ Main Card (620px max for email compatibility) -->
+      <table class="wrapper" width="620" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+
+        <!-- 🔷 HEADER -->
+        <tr>
+          <td style="background:#1e40af; padding:36px 32px; text-align:center;">
+            <h1 style="margin:0; font-size:22px; font-weight:700; color:#ffffff; font-family:'Tajawal', 'Almarai', sans-serif; letter-spacing:0.3px;">
+              تقديم على وظيفة
+            </h1>
+            <p style="margin:8px 0 0; color:rgba(255,255,255,0.9); font-size:14px; font-family:'Tajawal', 'Almarai', sans-serif;">
+              رسالة تقديم وظيفي احترافية
+            </p>
+          </td>
+        </tr>
+
+        <!-- 👤 PROFILE SECTION -->
+        <tr>
+          <td class="profile-section arabic" style="padding:32px 36px 20px; text-align:center;">
+            <img src="https://media.licdn.com/dms/image/v2/D4D35AQE8hYsI6t0Yxw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1696175405769?e=1777766400&v=beta&t=GdvToV3e2am4GlbkI8JPeeYZ8RxF_ts807BBUMoCMEw" 
+                 alt="فواز عبد الكريم الجبيلي" 
+                 width="128" height="128"
+                 style="width:128px; height:128px; border-radius:50%; object-fit:cover; border:4px solid #ffffff; box-shadow:0 4px 16px rgba(0,0,0,0.1); margin-bottom:16px; display:block;">
+            
+            <h2 style="font-size:24px; font-weight:700; color:#1a1a2e; margin:0 0 4px 0; font-family:'Tajawal', 'Almarai', sans-serif;">
+              فواز عبد الكريم الجبيلي
+            </h2>
+            <p style="font-size:15px; color:#64748b; margin:0; font-family:'Tajawal', 'Almarai', sans-serif;">
+              الرياض، المملكة العربية السعودية
+            </p>
+          </td>
+        </tr>
+
+        <!-- 📝 BODY CONTENT -->
+        <tr>
+          <td class="content arabic" style="padding:0 36px 36px; color:#334155; font-size:16px; line-height:1.8;" dir="rtl">
+
+            {{EMAIL_CONTENT}}
+
+            <!-- 🔹 About Me - English (LTR) -->
+            <h2 class="english" dir="ltr" style="color:#1e40af; font-size:19px; font-weight:600; margin:32px 0 12px 0; padding-bottom:8px; border-bottom:2px solid #e2e8f0; text-align:left; font-family:'Segoe UI', Tahoma, Arial, sans-serif;">
+              About Me
+            </h2>
+            <p class="english" dir="ltr" style="text-align:left; color:#334155; font-family:'Segoe UI', Tahoma, Arial, sans-serif; margin-bottom:20px;">
+              Results-oriented Administrative Professional and Certified Customs Broker with a strong background in logistics, financial records, and IT support. Expert in managing import/export documentation, trade compliance, and shipment coordination. Licensed by the Zakat, Tax and Customs Authority (ZATCA), with a proven ability to streamline operations using Oracle POS and Microsoft Office. Committed to improving supply chain efficiency and ensuring seamless cargo release.
+            </p>
+
+            <!-- 🔹 نبذة عني - Arabic (RTL) -->
+            <h2 class="arabic" dir="rtl" style="color:#1e40af; font-size:19px; font-weight:600; margin:32px 0 12px 0; padding-bottom:8px; border-bottom:2px solid #e2e8f0; text-align:right; font-family:'Tajawal', 'Almarai', sans-serif;">
+              نبذة عني
+            </h2>
+            <p class="arabic" dir="rtl" style="text-align:right; color:#334155; font-family:'Tajawal', 'Almarai', 'Segoe UI', Tahoma, Arial, sans-serif; margin-bottom:32px;">
+              إداري متميز بخلفية تقنية حاصل على رخصة مخلص جمركي معتمدة من هيئة الزكاة والضريبة والجمارك. أمتلك خبرة واسعة في إدارة العمليات الإدارية، التخليص الجمركي، وتنسيق الشحنات الدولية والمحلية. محترف في استخدام أنظمة Oracle وMicrosoft Office، مع مهارات استثنائية في إدارة البيانات والالتزام باللوائح التجارية السعودية والدولية. أسعى للمساهمة في تحسين كفاءة سلاسل الإمداد وتقليل زمن الفسح الجمركي.
+            </p>
+
+            <!-- 🎯 SINGLE CTA BUTTON (Centered) -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 24px 0 36px;">
+              <tr>
+                <td align="center" style="padding:0;">
+                  
+                  <!-- ✅ Primary CTA: Contact Me → LinkTree -->
+                  <a href="{{LINKTREE_URL}}" 
+                     class="cta-btn arabic" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     style="display:inline-block; padding:16px 48px; background:#1e40af; color:#ffffff; text-decoration:none; border-radius:12px; font-weight:700; font-size:17px; font-family:'Tajawal', 'Almarai', sans-serif; min-width:220px; text-align:center; box-shadow:0 4px 14px rgba(30,64,175,0.25);">
+                    💬 تواصل معي
+                  </a>
+                  
+                </td>
+              </tr>
+            </table>
+            
+            <!-- Optional: Subtle hint below CTA -->
+            <p style="text-align:center; color:#64748b; font-size:14px; margin:0 0 20px;">
+              جميع روابط التواصل والسيرة الذاتية في مكان واحد
+              <br>
+              <small dir="ltr" style="color:#94a3b8;">All contact links & CV in one place</small>
+            </p>
+
+          </td>
+        </tr>
+
+        <!-- ➖ DIVIDER -->
+        <tr>
+          <td style="padding:0 36px;">
+            <div style="border-top:1px solid #e2e8f0; margin:0;"></div>
+          </td>
+        </tr>
+
+        <!-- 🔻 FOOTER -->
+        <tr>
+          <td class="footer arabic" style="background:#f8fafc; padding:24px 36px; text-align:center; font-size:12px; color:#94a3b8; font-family:'Tajawal', 'Almarai', sans-serif;">
+            <p style="margin:0 0 6px 0;">
+              تم الإرسال بواسطة نظام التقديم الآلي
+            </p>
+            <p style="margin:0;">
+              <a href="{{UNSUBSCRIBE_URL}}" style="color:#94a3b8; text-decoration:none;">
+                إلغاء الاشتراك
+              </a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+      
+      <!-- Safe margin for mobile -->
+      <div style="height:24px; font-size:0; line-height:0;">&nbsp;</div>
+      
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>إلغاء الاشتراك | Unsubscribe</title>
+  
+  <!-- Google Fonts: Arabic-optimized -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Almarai:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Tajawal', 'Almarai', 'Segoe UI', Tahoma, Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 24px 16px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* ===== CARD CONTAINER ===== */
+    .container {
+      width: 100%;
+      max-width: 520px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    
+    /* ===== HEADER ===== */
+    .header {
+      background: #1e40af;
+      padding: 28px 32px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 0.3px;
+    }
+    .header p {
+      font-size: 14px;
+      opacity: 0.92;
+      margin: 6px 0 0;
+    }
+    
+    /* ===== CONTENT ===== */
+    .content {
+      padding: 32px 36px;
+    }
+    
+    .message {
+      font-size: 16px;
+      color: #334155;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    
+    .email-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #1e40af;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 14px;
+      margin: 12px 0 24px;
+      direction: ltr;
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
+    }
+    
+    /* ===== FORM ===== */
+    .form-group {
+      margin-bottom: 20px;
+      text-align: right;
+    }
+    .form-label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #1e293b;
+      font-size: 15px;
+    }
+    .form-select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      background: #ffffff;
+      color: #1e293b;
+      transition: border-color 0.2s;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: left 12px center;
+      background-repeat: no-repeat;
+      background-size: 16px;
+      padding-left: 36px;
+    }
+    .form-select:focus {
+      outline: none;
+      border-color: #1e40af;
+      box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+    }
+    
+    /* ===== BUTTONS ===== */
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 13px 20px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-primary {
+      background: #1e40af;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: #1d3a9a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.25);
+    }
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border: 2px solid #e2e8f0;
+    }
+    .btn-secondary:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
+    }
+    
+    /* ===== SUCCESS STATE ===== */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: #166534;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      margin-top: 16px;
+      font-size: 15px;
+    }
+    .success-message.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #f8fafc;
+      padding: 20px 36px;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+    }
+    .footer a {
+      color: #1e40af;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* ===== RTL/LTR UTILITIES ===== */
+    [dir="ltr"] { text-align: left !important; }
+    [dir="ltr"] .form-select {
+      background-position: right 12px center;
+      padding-right: 36px;
+      padding-left: 16px;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 480px) {
+      .content { padding: 24px 28px; }
+      .btn-group { flex-direction: column; }
+      .btn { min-width: 100%; }
+      .header h1 { font-size: 20px; }
+    }
+    
+    /* ===== SECURITY: Hide sensitive data ===== */
+    .token-input { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <div class="header">
+      <h1>إلغاء الاشتراك</h1>
+      <p>Unsubscribe Center</p>
+    </div>
+    
+    <!-- Content -->
+    <div class="content">
+      
+      <p class="message">
+        نأسف لرغبتك في المغادرة. يرجى تأكيد بريدك الإلكتروني وسبب إلغاء الاشتراك لمساعدتنا في التحسين.
+        <br><strong>We're sorry to see you go.</strong> Please confirm your email and reason to help us improve.
+      </p>
+      
+      <!-- Email Display (Read-only for security) -->
+      <div class="email-badge" id="userEmail" dir="ltr">user@example.com</div>
+      
+      <!-- Unsubscribe Form -->
+      <form id="unsubscribeForm" action="/api/unsubscribe" method="POST" novalidate>
+        
+        <!-- Secure Token (Hidden) -->
+        <input type="hidden" name="token" class="token-input" value="{{UNSUBSCRIBE_TOKEN}}">
+        <input type="hidden" name="email_hash" class="token-input" value="{{EMAIL_HASH}}">
+        
+        <!-- Reason Selection -->
+        <div class="form-group">
+          <label class="form-label" for="reason">سبب إلغاء الاشتراك / Reason</label>
+          <select id="reason" name="reason" class="form-select" required>
+            <option value="" disabled selected>اختر سببًا / Select a reason</option>
+            <option value="too_many">كثرة الرسائل / Too many emails</option>
+            <option value="not_relevant">محتوى غير ذي صلة / Content not relevant</option>
+            <option value="privacy">مخاوف الخصوصية / Privacy concerns</option>
+            <option value="other">أخرى / Other</option>
+          </select>
+        </div>
+        
+        <!-- Optional Feedback -->
+        <div class="form-group">
+          <label class="form-label" for="feedback">ملاحظات إضافية (اختياري) / Additional feedback (optional)</label>
+          <textarea id="feedback" name="feedback" rows="3" 
+                    style="width:100%; padding:12px 16px; border:2px solid #cbd5e1; border-radius:10px; font-family:inherit; font-size:15px; resize:vertical;"
+                    placeholder="نقدر ملاحظاتك... / We value your feedback..."></textarea>
+        </div>
+        
+        <!-- Confirmation Checkbox -->
+        <div style="margin: 20px 0; display: flex; align-items: flex-start; gap: 10px;">
+          <input type="checkbox" id="confirm" name="confirm" required 
+                 style="margin-top: 4px; width: 18px; height: 18px; accent-color: #1e40af;">
+          <label for="confirm" style="font-size: 14px; color: #334155; line-height: 1.5;">
+            أؤكد رغبتي في إلغاء الاشتراك من جميع الرسائل المستقبلية.<br>
+            <strong>I confirm I want to unsubscribe from all future emails.</strong>
+          </label>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">
+            ✅ تأكيد الإلغاء / Confirm Unsubscribe
+          </button>
+          <a href="{{RETURN_URL}}" class="btn btn-secondary">
+            ↩️ العودة / Go Back
+          </a>
+        </div>
+        
+      </form>
+      
+      <!-- Success Message -->
+      <div id="successMsg" class="success-message">
+        <strong>✓ تم إلغاء الاشتراك بنجاح!</strong><br>
+        You have been successfully unsubscribed. You may close this window.
+      </div>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        <a href="{{PRIVACY_URL}}">سياسة الخصوصية</a> 
+        • 
+        <a href="{{SUPPORT_URL}}">الدعم الفني</a>
+        <br>
+        <small>© {{YEAR}} جميع الحقوق محفوظة / All rights reserved.</small>
+      </p>
+    </div>
+    
+  </div>
+
+  <!-- ✅ Secure Form Handler (Modular & Safe) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('unsubscribeForm');
+      const successMsg = document.getElementById('successMsg');
+      const userEmailEl = document.getElementById('userEmail');
+      
+      // 🔐 Security: Never expose raw email in frontend - use hash/token
+      // This email display should be populated server-side with masked value
+      // Example: u***@example.com
+      if (userEmailEl && '{{USER_EMAIL_MASKED}}' !== '{{USER_EMAIL_MASKED}}') {
+        userEmailEl.textContent = '{{USER_EMAIL_MASKED}}';
+      }
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Client-side validation
+        const reason = document.getElementById('reason').value;
+        const confirmed = document.getElementById('confirm').checked;
+        
+        if (!reason || !confirmed) {
+          alert('يرجى إكمال جميع الحقول المطلوبة / Please complete all required fields');
+          return;
+        }
+        
+        // 🔄 Show loading state (optional)
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '⏳ جاري المعالجة... / Processing...';
+        
+        // 📤 Submit via Fetch (CORS-safe, token-protected)
+        const formData = new FormData(form);
+        
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            // ✅ Hide form, show success
+            form.style.display = 'none';
+            successMsg.classList.add('show');
+            
+            // 🎯 Optional: Trigger Telegram notification (if integrated)
+            // if (window.TelegramWebview) { ... }
+            
+          } else {
+            throw new Error(data.message || 'Unexpected error');
+          }
+        })
+        .catch(error => {
+          console.error('Unsubscribe error:', error);
+          alert('حدث خطأ أثناء المعالجة. يرجى المحاولة لاحقًا.\nAn error occurred. Please try again later.');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
