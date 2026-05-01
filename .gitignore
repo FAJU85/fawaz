@@ -1,1 +1,1 @@
-Nothing needs to be added to .gitignore since only a configuration file (vercel.json) was added, which is a source/config file that should be tracked in version control.
+# Keep the repo clean for Cloudflare Pages deployment
