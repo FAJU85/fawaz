@@ -1,1 +1,1 @@
-# Keep the repo clean for Cloudflare Pages deployment
+Nothing needs to be added to .gitignore since the changes only include HTML files (source code) and no build artifacts, dependencies, or temporary files that should be ignored.
