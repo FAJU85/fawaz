@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "self-healing-orchestrator",
+  "owner": "nguyenthienthanh",
+  "repo": "aura-frog",
+  "path": "aura-frog/skills/self-healing-orchestrator",
+  "branch": "main",
+  "sha": "ea05e1b4d778d507f37a1029c854cf7213019ff0",
+  "source": "manual"
+}
